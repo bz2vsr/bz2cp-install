@@ -1,5 +1,0 @@
-Your ping (round-trip transmission time) to this server exceeds the recommended limit of 1000ms.
-
-Some servers may forbid pings over a certain limit, or you may find your performance to be unacceptable due to transmission lag. We recommend that you find a server closer to you.
-
-Click 'Join Game' again to try and enter anyway.
