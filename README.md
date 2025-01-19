@@ -46,5 +46,5 @@ NOTE: I suggest making copies of your root folder at certain points, in case you
 
 ## Troubleshooting
 
-If you encounter in-game mouse issues such as mouse input freezes, you are likely using a mouse with a DPI setting that is too high. Try lowering it into the 250 range, or use a regular/older USB mouse.
+If you encounter in-game mouse issues such as mouse input freezes, you are likely using a mouse with a DPI setting that is too high. I suggest lowering your DPI to 250 or lower, or use a regular/older USB mouse.
 
