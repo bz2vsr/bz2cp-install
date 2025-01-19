@@ -1,0 +1,171 @@
+// Mortar bike rush
+
+[Start]
+scrapCount = 40
+scavClass = "ivscav"
+consClass = "ivcons"
+
+[Match]
+targetType1= "ivscout"
+attackType1_1 = "ivscout"
+
+targetType2= "ivserv"
+attackType2_1 = "ivrckt"
+
+targetType3= "ivtank"
+attackType3_1 = "ivrckt"
+
+targetType4 = "ivwalk"
+attackType4_1 = "ivrckt"
+attackType4_2 = "ivrckt"
+
+[Plan1]
+planType = "CollectField"
+planPriority = 200
+buildIfNoIdle = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 195
+buildIfNoIdle = 1
+
+[Plan3]
+planType = "CollectPool"
+planPriority = 190
+buildIfNoIdle = 1
+
+[Plan4]
+planType = "CollectPool"
+planPriority = 185
+buildIfNoIdle = 1
+
+[Plan5]
+planType = "CollectPool"
+planPriority = 180
+buildIfNoIdle = 1
+
+
+[Plan6]
+planType = "BuildMinimums"
+planPriority = 140
+buildType1 = "ivcons"
+buildCount1 = 1
+
+[Plan7]
+planType = "BaseBuildMinimums"
+planPriority = 130
+buildType1 = "ibpgen"
+buildType2 = "ibfact"
+buildType3 = "ibarmo"
+
+[Plan8]
+planType = "BuildMinimums"
+planPriority = 120
+buildType1 = "ivmbike"
+buildCount1 = 6
+doNextOnFail =1 
+
+[Plan9]
+planType = "Attacker"
+planPriority = 110
+targetType = "ivturr"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+
+[Plan10]
+planCondition = "NotHisExists"
+planConditionClass = "ibgtow"
+planConditionCount = 1
+planType = "Attacker"
+planPriority = 100
+targetType = "ibrecy"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+attackType5 = "ivmbike"
+maxAttacks = 3
+
+[Plan11]
+planType = "Attacker"
+planPriority = 95
+targetType = "ibscav"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+maxAttacks = 4
+
+
+[Plan12]
+planType = "BaseBuildMinimums"
+planPriority = 70
+buildType1 = "ibpgen"
+buildCount1 = 2
+buildType2 = "ibcbun"
+buildCount2 = 1
+buildType3 = "ibgtow"
+buildCount3 = 1
+
+[Plan13]
+planType = "BuildMinimums"
+planPriority = 65
+buildType1 = "ivrckt"
+buildCount1 = 4
+doNextOnFail= 1
+
+[Plan14]
+planType = "Attacker"
+planPriority = 60
+targetType = "ibgtow"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+attackType5 = "ivmbike"
+attackType6 = "ivrckt"
+
+[Plan15]
+planType = "BuildMinimums"
+planPriority = 50
+buildType1 = "ivmbike"
+buildCount1 = 10
+
+[Plan16]
+planType = "Attacker"
+planPriority = 45
+targetType = "ibscav"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+attackType5 = "ivmbike"
+attackType6 = "ivrckt"
+maxAttacks = 6
+
+[Plan17]
+planType = "Attacker"
+planPriority = 40
+targetType = "ibscup"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivmbike"
+attackType5 = "ivmbike"
+attackType6 = "ivrckt"
+maxAttacks = 6
+
+[Plan18]
+planType = "Attacker"
+planPriority = 35
+targetType = "ibrecy"
+attackType1 = "ivmbike"
+attackType2 = "ivmbike"
+attackType3 = "ivmbike"
+attackType4 = "ivrckt"
+attackType5 = "ivmbike"
+attackType6 = "ivmbike"
+attackType7 = "ivmbike"
+attackType8 = "ivrckt"
+

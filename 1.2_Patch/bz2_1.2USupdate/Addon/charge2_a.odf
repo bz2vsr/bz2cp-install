@@ -1,0 +1,78 @@
+[OrdnanceClass]
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 0.7
+xplGround = "xmaggnd2_a"
+xplVehicle = "xmagcar2_a"
+xplBuilding = "xmagcar2_a"
+
+renderName = "charge2_a.render"
+
+ammoCost = 20
+lifeSpan = 1.25 // 150m
+shotSpeed = 120.0
+
+damageValue(N) = 140 // none // 700
+damageValue(L) = 80 // light // 400
+damageValue(H) = 20 // heavy // 100
+
+damageValue(S) = 80 // standard    // 400
+damageValue(D) = 140 // deflection // 700
+damageValue(A) = 24 // absorbtion  // 120
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "charge2_a.light"
+renderName2 = "charge2_a.flame"
+renderName3 = "charge2_a.smoke"
+renderName4 = "charge2_a.trail"
+
+[Light]
+renderBase = "draw_light"
+startColor = "255 50 0 510" 
+finishColor = "255 50 0 510" 
+startRadius = 15.0
+finishRadius = 15.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 0 255" 
+finishColor = "255 0 255 0" 
+startRadius = 0.2
+finishRadius = 0.1
+animateTime = 0.07
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.07
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "blast.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 0 31" 
+finishColor = "255 0 255 0" 
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 0.07
+rotationRate = 10.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.07
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "smoke2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.01
+startColor = "255 50 0 127" 
+finishColor = "255 0 255 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.15

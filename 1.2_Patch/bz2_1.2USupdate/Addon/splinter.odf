@@ -1,0 +1,18 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 1
+lifeSpan = 0.5
+shotSpeed = 200.0
+
+damageValue(N) = 70
+damageValue(L) = 30
+damageValue(H) = 10
+
+damageValue(S) = 30
+damageValue(D) = 1
+damageValue(A) = 70

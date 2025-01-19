@@ -1,0 +1,51 @@
+[GameObjectClass]
+geometryName = "fbover00.xsi"
+classLabel = "commtower"
+collisionRadius = 1.0
+scrapCost = 80
+scrapValue = 30
+maxHealth = 8000
+maxAmmo = 0
+powerCost = 0
+unitName = "Overseer Array"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1
+
+armorClass = H
+
+buildSupport = "A"
+buildRequire = "F"
+
+requireCount = 2
+requireName1 = "fbantm"
+requireText1 = "Build Antenna"
+requireName2 = "fbforg"
+requireText2 = "Build Forge"
+
+provideCount = 2
+provideName1 = "fbantm"
+provideName2 = "fbover"
+
+[PoweredBuildingClass]
+powerTap1 = "HP_TAP_1"
+powerTap2 = "HP_TAP_2"
+powerName = "fblung"
+detectRange = 600
+
+[BuildingClass]
+soundAmbient = "santm01.wav"
+
+[CommTowerClass]
+rangeScan = 1000 // copied from ibcbun.odf... fix this?
+periodScan = 0.0
+
+[Lod1]
+geometryName = "fboverL1.xsi" ;geometry for lod1
+distance = 100                    ;bsphere under 200 pixel => switch to lod1
+dontShiftLOD = 1
+
+

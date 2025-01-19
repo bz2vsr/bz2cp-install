@@ -1,0 +1,61 @@
+// Scout, sentry archer rush strategy
+
+[Start]
+scrapCount = 40
+scavClass = "fvscav"
+consClass = "fvcons"
+
+[Plan1]
+planType = "CollectField"
+planPriority = 500
+maxTries= 2
+buildIfNoIdle = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 490
+buildIfNoIdle = 1
+
+[Plan3] 
+planType = "CollectPool"
+planPriority = 480
+maxTries = 4
+buildIfNoIdle = 1
+
+[Plan4]
+planType = "CollectPool"
+planPriority = 470
+maxTries =3
+buildIfNoIdle = 1
+
+[Plan5]
+planType = "Hold"
+planPriority = 440
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold1"
+buildIfNoIdle = 1
+
+[Plan6]
+planType = "Hold"
+planPriority = 430
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold2"
+buildIfNoIdle = 1
+
+[Plan7]
+planType = "Hold"
+planPriority = 420
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold3"
+buildIfNoIdle = 1
+
+[Plan8]
+planType = "Hold"
+planPriority = 410
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold4"
+buildIfNoIdle = 1

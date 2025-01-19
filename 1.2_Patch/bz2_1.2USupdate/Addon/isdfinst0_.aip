@@ -1,0 +1,31 @@
+[Start]
+scrapCount = 40
+scavClass = "ivscav"
+consClass = "ivcons"
+
+[Match]
+targetType1= "ivscout"
+attackType1_1 = "ivscout"
+attackType1_2 = "ivscout"
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 200
+buildIfNoIdle = 1
+
+[Plan2]
+planType = "CollectPool"
+planPriority = 195
+buildIfNoIdle = 1
+
+[Plan3]
+planType = "CollectPool"
+planPriority = 190
+buildIfNoIdle = 1
+
+[Plan4]
+planType = "BuildMinimums"
+planPriority = 140
+buildType1 = "ivcons"
+buildCount1 = 1
+

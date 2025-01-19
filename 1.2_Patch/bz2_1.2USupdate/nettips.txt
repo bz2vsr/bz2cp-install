@@ -1,0 +1,652 @@
+
+                       Tips for Battlezone 2 Multiplayer
+                                       
+   This document was written by Nathan Mates, email nathan@visi.com. As
+   this document may be updated over time, please do not copy out its
+   contents to other websites. A link to
+   http://www.visi.com/~nathan/bz2/nettips.html is acceptable. Note: this
+   information is NOT provided as an official source; please refer to the
+   game manual for that. Please do not call or email Tech Support for
+   help with anything contained below.
+   
+   For the official BZ2 discussion boards, please see
+   http://www.pandemicstudios.com/bzii/, or Activision's website at
+   http://www.activision.com/.
+   
+   Version 1.2b24 . Last Updated: May 3, 2000. [What's new? Scroll down
+   to the bottom.]
+   
+   Please note: This document makes reference to Battlezone 1.2, which
+   has not officially been released yet. Thus, the features of that
+   version are subject to change, and this document may not bear any
+   resemblance to the official 1.2 patch. Do NOT email asking me where to
+   find it, though a lot of fansites and message boards may have links to
+   some leaked versions.
+   
+   BZ2 1.1 official patch now available! See
+   http://www.pandemicstudios.com/bzii/ or
+   http://www.planetbattlezone.com for download info. This should fix a
+   number of problems noted; the 1.2 patch is in progress as well.
+     _________________________________________________________________
+   
+  Ports, Firewalls, IPMasq/NAT/Internet Connection Sharing
+  
+   Battlezone2's network traffic runs under TCP/IP only. By default, it
+   uses UDP ports 17770 and 17771. If you have a firewall in place
+   between your computer and the network, you will have to allow traffic
+   to freely travel in both directions along those ports. Consult the
+   documentation for the firewall to allow that to happen.
+   
+   If you are using some sort of address-translation setup
+   (IPMasq/NAT/Internet Connection Sharing), and are having troubles
+   connecting to games, first check firewall settings. Additionally, you
+   may want to manually forward traffic on the BZ2 ports to the computers
+   in question. Once again, consult the documentation for your setup.
+   
+   Also, note that the patches to BZ2 may improve performance with joins
+   under IPMasq/NAT/ICS. Check them out if you're having problems.
+   
+   BZ2 1.2 note Two additional TCP ports are used under 1.2: 17771 and
+   17772 (based on default port # of 17770). You must enable them as well
+   if you want to host a game inside of a firewall.
+   
+   Notes if hosting a game If you're behind a firewall or IP Masq/ICS/NAT
+   (i.e. address translator) connection, you must open up or autoforward
+   these ports to your machine. However, if you just want to be a client
+   in a game hosted elsewhere, opening up stuff is not necessary. Why is
+   this needed for a host and not a client? Simple: almost all these
+   setups allow return traffic once an outgoing connection is initiated--
+   the client finds a server, and says "Hello!" to it. When the server
+   says "Join the fun," the firewall/translator can tell which machine it
+   should return to, and allow the connection.
+   
+   However, firewall/translator systems are usually configured to drop
+   connections they don't know anything about. If you're hosting a BZ2
+   game on a machine H behind firewall/translator system F, if 'F'
+   recieves the "Hello!" packet from any random machine on the net, it'll
+   just throw it away. You need to change the configuration on F to allow
+   those packets in, and send them on to H, where BZ2 is running and can
+   handle those packets.
+     _________________________________________________________________
+   
+  In-game chat
+  
+   While you can chat in Battlezone 2 from the non-pausing escape-screen,
+   it's faster and easier to simply hit the Enter key, type what you want
+   to say, and hit Enter again.
+     _________________________________________________________________
+   
+  In-game score info
+  
+   Control+Enter while playing BZ2 Multiplayer (though not with the
+   Escape screen up) toggles the in-game score info on/off.
+     _________________________________________________________________
+   
+  Chat commands
+  
+   While there's a lot of commands that you can execute with the GUI, at
+   any of the 3 chatlines (shell, in-game Escape screen, in-game
+   activated by 'Enter') have a number of commands that can be executed.
+   Type "/help" (no "s) on a line by itself to see the mini-help, or use
+   this list of commands.
+   
+   For commands that have a required parameter, it is marked below in
+   []s; an optional parameter is in {}s.
+   
+   * /help
+          Shows mini-help for most chat commands
+          
+   * /list
+          Shows a list of players. It will look something like this:
+          
+Players in game:
+C: (0) GSH [Local] [Server]
+
+          The 'C:' up front identifies them as a team commander (if
+          applicable). Next is a number in parentheses before the
+          playername; it can be used as a shortcut to that player's name
+          if you'd rather not type it out, e.g. "/info 0" or "/info GSH"
+          will do the same thing. Finally, the local player (you) is
+          identified, as well as the server by optional tags.
+          
+   * /info [Name/ID#]
+          Shows info on a particular player. You must follow this command
+          with either the player name, or the player number identifier.
+          This command will have output like this:
+          
+Info on (0) Name: GSH [Local] [Server]
+  Ping: 0 Deaths: 0 Kills: 0
+  Commander of TeamGroup 1
+
+          The info presented above should be self-explanatory.
+          
+   * /pinglist
+          Shows ping times to all players. The pingtime is the average
+          round-trip time in milliseconds for packets to get to the
+          server and back. Thus, a ping of 500 is 1/2 of a second.
+          
+   * /leave {Explanation}
+          Leaves the game. If an explanation message is also on that
+          command line, it will be sent to all first.
+          
+   * /msg [Name/ID#] [Text]
+          Sends a private message to the specified player. This is always
+          sent to just that player, no matter what the Chat with
+          All|Team|One is set to. Private messages appear on the sender's
+          chat window as follows:
+          
+-> GSH: This is a private message sent to GSH
+
+          and on the receiving end as:
+          
+GSH ->: This is a private message sent from GSH
+
+   * /kick [Name/ID#] {Explanation}
+          A server-only command; it removes that player from the game
+          asap. An explanation may be given on the line, but it's not
+          necessary.
+          
+   * /nick [NewName]
+          Changes your in-game name to the new name specified. Spaces are
+          not allowed in names, and the server may correct your name for
+          legality and/or uniqueness.
+          
+   * /lockdown
+          A server-only command; it prevents anyone from joining. Same
+          functionality as the 'Joins: Deny' button in the shell and
+          escape screen.
+          
+   * /openjoin
+          A server-only command; it reverses the /lockdown and allows
+          anyone to join. [Subject to passwords, player limits, etc].
+          Same functionality as the 'Joins: Deny' button in the shell and
+          escape screen.
+          
+   * /chatall
+          Sets further chat messages to be sent to all players in the
+          game. Same functionality as the 'Chat with All' interface
+          buttons.
+          
+   * /chatteam
+          Sets further chat messages to be sent to all teammates. If
+          teamplay is off, this setting acts like 'Chat with All'. Same
+          functionality as the 'Chat with Team' interface buttons.
+          
+   * /chatone [Name/ID#]
+          Sets further chat messages to be sent to the specified player,
+          without having to use the /msg command above. Same
+          functionality as the 'Chat with One' interface buttons.
+          
+   * /chattype
+          Reports what the current chat type is-- chat with All, Team, or
+          a single player.
+          
+   * /commandlist
+          Shows all commands recognized by the chat system.
+          
+   * /vehiclelist
+          Shows what each player has chosen for a vehicle. If DM vehicle
+          randomizing is on (see below), this option will not show the
+          current vehicle, but only what they chose in the shell.
+          
+   * /ip [Name/ID#]
+          Shows the IP address for a given player other than the local
+          player. Note: clients can only see the IP address of the
+          server; they have no ability to see any other clients' info.
+          Servers can see the IP address of anyone.
+          
+   * /iplist
+          Shows the IP addresses of all players in game; once again
+          clients can only see the IP address of the server; they have no
+          ability to see any other clients' info. Servers can see the IP
+          address of anyone.
+          
+   * /gsoff
+          Server-only option; stops responding to all Gamespy queries
+          received. This will effectively prevent anyone from seeing (and
+          therefore joining) the game. This option may be most useful for
+          modem-servers who don't want the possibility of extra bandwidth
+          being used by mid-game Gamespy queries.
+          
+   * /gson
+          Server-only option, and the default. Allows BZ2 to respond to
+          all Gamespy queries received. If /gsoff had previously been
+          done, this'll allow the game to be visible once again.
+          
+   * /version
+          [v1.2 only]Shows the game version and gamespy version being
+          used.
+          
+   * /newserver [Name/ID#]
+          [v1.2 only] Switches the hosting of the current session to the
+          specified player, under the following conditions: (1) You must
+          be the existing server to change the server, (2) You can not
+          switch server to self (duh), and (3) All players must be
+          playing the game (i.e. not in shell).
+     _________________________________________________________________
+   
+  Sync Join
+  
+   Noted as 'Sync (Off) (On)' in the server's shell interface, this
+   option allows the server to have all players start playing at the same
+   time. In deathmatch, such an option is not normally chosen, but for
+   strategy games, it may be desirable to do this. (Note: selecting
+   another map will reset this option (and others) to what the map's
+   defaults are.)
+   
+   If Sync Join is on, when the server launches, it'll wait for all other
+   clients to launch as well. When all clients have reported in, the
+   server will send the gamestate to them, and gameplay will begin.
+   However, if a client (taking a nap or something) doesn't hit the
+   'Enter Game' button within 120 seconds, they'll be kicked out.
+   
+   After the Sync Join is completed, by default, other players may join,
+   as if Sync Join was off. Use the 'Joins: Allow/Forbid' option to
+   prevent further joins after a sync join.
+     _________________________________________________________________
+   
+  Vehicle Randomizer
+  
+   In Deathmatch (and similar, such as CTF and Loot) games, the server
+   has the option of randomizing vehicles. The shell option looks like
+   this: 'Vehicle [Fixed|Race|Random]'. (Note: selecting another map will
+   reset this option (and others) to what the map's defaults are.) If the
+   selection is 'Fixed', a new craft for a player will always be
+   identical to their vehicle selection within the shell.
+   
+   If the selection is set to 'Race', then a random vehicle of the same
+   race as that player's shell selection is chosen. (Of course, that
+   randomizing is within the list of allowed vehicles by the server.) If
+   the selection is set to 'Random', a random vehicle of any race allowed
+   by the server is chosen.
+     _________________________________________________________________
+   
+  Chat messages timeout
+  
+   By default, the in-game chat/messages window (not the escape screen)
+   erases messages after 5 seconds. However, this is settable from the
+   game console. While playing, hit Control-` (that's 2-keys, control and
+   the key with ` and ~ marked on it) to pull up the console. [Chat
+   messages are printed there as well, so some may just want to see that
+   for a few seconds.] At the console, type
+   'network.session.messagesappearforseconds 99' to set it to 99 seconds
+   (what I prefer). The number can be anywhere from 1 to 9999 seconds;
+   outside that range and it'll be reset to the default of 5 seconds. Hit
+   Control-` to hide the console again.
+   
+   The console does have tab-completion (if you don't know what that is,
+   you should use unix more) of commands. So, you can hit
+   'net'[tab]'.ses'[tab]'.mes'[tab] to type that line a little faster.
+     _________________________________________________________________
+   
+  Objectives window obscures chat
+  
+   If you hit 'o' during multiplayer, an empty transparent gray box will
+   appear on the right side of the screen. [CTF may put an actual
+   objective in it.] This objectives window will hide the chat window
+   which appears in the same place. Hit 'o' again to turn it off.
+     _________________________________________________________________
+   
+  Non-pausing servers
+  
+   By default, a BZ2 game will pause when a new client joins. This is
+   designed to give modem servers a chance to have more bandwidth
+   available to send the gamestate to new clients without being
+   overloaded. However, if the game is hosted from a faster (i.e. ISDN,
+   Cable Modem, DSL, T1, T3, OC-48) network connection, you may want to
+   turn this off.
+   
+   Note: this information is provided to you without any guarantees of
+   support or stability. It is an officially unsupported option, and
+   should be used at your own risk. [In other words: don't gripe if it
+   doesn't work for you. You're on your own.] To set this up, as a
+   server, when you're in the MP shell (i.e. choosing a map/vehicle), go
+   to the console (see above), and type the following
+   'network.session.ivar10 1'. [The default setting is 0, i.e. pausing]
+   That preference will be used until you quit and start another game.
+     _________________________________________________________________
+   
+  Playing on a LAN Only
+  
+   BZ2 supports non-gamespy games among machines connected on a single
+   subnet. To do this, all machines must have the same first 3 sections
+   of their IP address (e.g. 192.168.1.*), and a valid subnet mask
+   (usually 255.255.255.0 for such a class-C network). Next, from the
+   game servers list window, there's a button in the top-right of that
+   window marked 'Gamespy'. Press that button and it'll change to 'LAN
+   Only'. [See command line options below for how to set this by default]
+   This button must be set the same on all machines you want to play a
+   game with.
+   
+   With a server set to LAN Only, it will not broadcast game information
+   to Gamespy, and thus cannot be seen by a machine outside of your
+   subnet. That is why a client must also be set to the LAN Only.
+     _________________________________________________________________
+   
+  Commandline Options
+  
+   BZ2 supports several commandline options that Gamespy uses. To enter
+   them, you'll either have to create a shortcut to bzone.exe, and edit
+   that shortcut's properties, or add in the options via Start -> Run
+   under Windows pointed at bzone.exe.
+   
+   * +name "Player Name"
+          Sets the initial Multiplayer player name to the value
+          specified. If there is a space or other character in the name,
+          it must be enclosed in "s, as above. However, BZ2 will still
+          ensure the name conforms to limits.
+          
+   * /lanonly
+          Sets the initial setting of the Gamespy/LAN Only button to be
+          LAN Only; omitting this option uses the default of Gamespy. You
+          may still change this setting in-game, though.
+          
+   * +host [PortNum]
+          Starts up BZ2 as a host (i.e. server) of a game, and places you
+          in the Multiplayer Game Options shell screen. Valid port
+          numbers to host on are 1024 through 65534; if the portnum
+          specified is outside that range, the default of 17770 is used.
+          BZ2 always uses 2 ports that are adjacently numbered; the
+          number specified is the first.
+          
+   * +connect [i.p.add.ress:PortNum]
+          Starts up BZ2 as a client to the game specified by IP address
+          and port number; the port number should be the second BZ2 port
+          number, usually 17771. For example, "+connect
+          192.168.1.4:17771" tries to join the game at 192.168.1.4.
+          
+   * +password "TopSecretPassword"
+          For either a client or a server (see above), this commandline
+          parameter sets the password used when creating or joining that
+          game.
+     _________________________________________________________________
+   
+  Bandwidth considerations
+  
+   Since BZ2 is a client-server networking model, this optimizes each
+   client's bandwidth, while pushes it towards the server. For a 4-player
+   game with server 'S' and clients 'A', 'B', and 'C', the server must
+   receive A's moves, and send them out to B and C. The server must send
+   moves SBC to client A, SAC to client B, and SAB to client C. Thus, the
+   server must send out N-1 moves per frame, where N is the number of
+   players in the game. On the other hand, the clients only need to send
+   their own moves towards the server.
+   
+   If at all possible, host a BZ2 game on the fastest network connections
+   possible.
+     _________________________________________________________________
+   
+  Changing groups, sending units
+  
+   In strategy, you can combine like units into one group. If you have a
+   tank on the F1 group, and another tank on F3, you can unify them into
+   the F1 group by pressing F3, releasing that key, then Control-F1. To
+   split a group, say the F1 group, hit Control-F1 to open it up and you
+   can access the individual units within.
+   
+   What's this mean for networking? In team strategy, you can send units
+   back and forth between the commander and the wingmen the same way.
+   Notice how there's icons for your allies, such as F10..F8? Select a
+   group of units, then Control-F10 will send it to that ally. Not all
+   units may be transferred-- recycler (vehicles) and constructors can
+   not. But, you can give scavs to the wingmen in the early game so they
+   can be escorted out to the scrap pools.
+     _________________________________________________________________
+   
+  Resyncs
+  
+   If you get a 'Checking Gamestate' message (especially as the server),
+   that means that someone (or multiple someones) are out of sync from
+   the server. This can be caused by either a bug, or someone trying to
+   use a cheat program (commonly called a 'trainer'). The cheat codes for
+   BZ2 Singleplayer won't work in MP, and they'd only desynchronize the
+   game for everyone. So, if you are thinking of cheating, go away.
+     _________________________________________________________________
+   
+  Where's my tank!
+  
+   When you are ejected from a destroyed tank in BZ2 Deathmatch, you may
+   be wondering where your next ride will be. As long as you're in the
+   air, a new ship will not be created for you. This would be a good time
+   to find a safe spot to land. After you land, or are killed as a pilot,
+   a new craft will be spawned in somewhere near you. It may be behind
+   you, so use your radar to find it. If it appears on top of water, and
+   you feel you can't get to it, remember that you have a jetpack that
+   can be set off underwater-- and once you enter the tank, it'll refill
+   the jetpack.
+     _________________________________________________________________
+   
+  Free for all Strat
+  
+   This is possible on certain strategy maps to have more than 2
+   recyclers, but this requires turning off teamplay. Select a map like
+   'ST: River4', which hits at 4 commanders, but you can't turn off
+   teamplay. Like the no-pause servers above, when you're in the MP shell
+   (i.e. choosing a map/vehicle) as the server, go to the console (see
+   above), and type the following 'network.session.ivar11 0'. [The
+   default setting is 1, i.e. teamplay locked to being on] If you select
+   another map, it'll read the default value for that ivar out, and reset
+   it.
+   
+   Most strategy maps shipped with BZ2 have only 2 spawnpoints and not
+   enough scrap pools that it is highly recommended that you not do this
+   on any map that doesn't suggest 4 commanders, i.e. River4 and Ground
+   Four.
+     _________________________________________________________________
+   
+  /poweruser commandline switch
+  
+   This option (not tweakable in the game; it must be added to the
+   shortcut) was in previous versions, but really is most useful in
+   version 1.2. This was my commandline switch to make the game work the
+   way I want it to-- especially the first two options which put more
+   text onscreen. For a short list of what it does:
+   
+   * Chat messages timeout is 99 seconds, not 5. Still editable with
+          console command as above.
+          
+   * In-game score screen is on by default. Use Control-Enter to turn it
+          on/off, as usual.
+          
+   * Server list shows much more information, such as:
+          * All games reported back by Gamespy; a "(V)" is in the
+          password column if the Gamespy version differs from your local
+          one. Also, the 'Game Stats' box up top shows the actual GS
+          version for a session.
+          * Player list shows name, and 4 numbers; they are (in order)
+          Deaths, Kills, Team number, Ping (host always has ping of -1)
+          
+   * Player disconnect/leave reasons are printed to the messages boxes,
+          such as the Winsock reason, or movelag. (Movelag is when moves
+          are not received 23-28 seconds after they're due). Note: this
+          is most useful for a server to do; clients are not told
+          disconnect/leave reasons unless it's their own. Note: messages
+          like this are also sent to the console, so if you're at the
+          game over screen, you can hit control-~ to turn on the console
+          and see the reasons printed, then control-~ to turn it off
+          again.
+          
+   * With /poweruser on, you can host a game with 14 players, not 8. This
+          is most useful for some sort of lobby-style game which isn't
+          launched. 14 players in an actual game would probably flood out
+          modem users, but you can try it over a LAN.
+          
+   * No warnings printed on changing the playerlimit or unit limit above
+          normal.
+          
+   * Probably some other tweaks as well.
+     _________________________________________________________________
+   
+ 
+  Lag vs connection speed
+  
+   As measured in BZ2, lag is the difference between where your machine
+   is, and where it should be, based on lockstep timesteps. It is not
+   necessarily related to network connection speed-- a slow computer
+   playing on a LAN can lag even though the LAN is physically capable of
+   moving the data quickly enough. Much data is computed locally on every
+   machine, and things must be drawn as well to keep up; you may not be
+   able to speed up the gamestate calculations, but by lowering the
+   graphic options, you may reduce lag.
+   
+   Lag is also affected by packet loss. A fast (Cable, DSL, T1, etc) line
+   that loses every other packet is a worse candidate for playing the
+   game on than a slower connection that actually delivers data reliably.
+   While playing the game, hit escape to view the no-pause screen, and
+   look in the ping column. Version 1.2 shows what percentage of move
+   packets have had to be retransmitted, as a percentage. Thus, if that
+   box says "152 (-3.4%)", the ping is 152ms, and 3.4% of recent (over
+   about 30-40 seconds) movepackets have had to be retransmitted. If that
+   loss percentage goes over about 15%, the connection is lousy and you
+   should consider joining somehting with a more reliable connection.
+   
+   [/pinglist (see above) at the chatline also shows packet loss
+   percentages; that % is always 0 for players in the shell as there are
+   no movepackets transmitted to/from them to lose.]
+     _________________________________________________________________
+   
+  Version 1.2 Deathmatch Updates
+  
+   BZ2 1.2's Deathmatch01.dll supports a new game type, 'Race'. One map,
+   racepluto.bzn is included as an example of this. There are 16
+   checkpoints on a map you must reach to complete a lap, and the number
+   of laps needed to win can be set in the shell. Besides the normal
+   death/kills points system, one point is awareded for the first person
+   to reach a checkpoint on a lap, and another point for completing a lap
+   first. If killed as a pilot, you respawn back at the last checkpoint
+   you completed.
+   
+   Tip: not all craft have many rear-firing weapons, so being the leader
+   may mean you're getting shot up a lot. Also, on racepluto, if you take
+   the longer routes around the outside, there's health powerups... it's
+   all tradeoffs.
+   
+   How to make a race map: you must place 16 spawnpoints (odf name
+   'pspwn_1' on the map, and give them team numbers from 0 thru 15.
+   Everyone starts at the spawnpoint w/ team 0, proceeds to 1, and so on.
+   For the .inf file for the map, you can either clone the racepluto.inf
+   file (under addon); ivar7 is set to 5 for a normal race, and set to 6
+   for vehicle-respawn race (don't eject as a pilot, you simply respawn
+   in a new vehicle when you die).
+     _________________________________________________________________
+   
+  Version 1.2 Multiplayer Strategy Updates
+  
+   No real gameplay enhancements were made, though some features have
+   been added for thugs and mapmakers.
+   
+   If the config variable 'network.seesion.ivar14' is set to 1 (the
+   default), human players will get +1 point for killing an enemy AI
+   unit. [And -1 for killing a friendly AI unit] Also, the config
+   variable 'network.seesion.ivar15', when 1, will give +1 kill for
+   killing an enemy AI unit. These settings can be overridden by the
+   map's .inf file.
+   
+   For mapmakers, in BZ2 1.2 strategy, you can force a team (by number)
+   to start in a specified place (no randomizing) by placing a spawnpoint
+   (odf 'pspwn_1') down on the map with the specified team #. In teamplay
+   games, teamgroup 1 is on team #1, and teamgroup 2 is on on team #6.
+   
+   Also, mapmakers can place some (optional) lines in the .inf to lock
+   races:
+   
+   LockTeam1Race = "i"
+   LockTeam2Race = "f"
+   
+   The first character of the lock is used to restrict their vehicle
+   selection to vehicle odfs starting with that character. If there is no
+   lock line specified, the commander of that team can pick any allowable
+   vehicle.
+   
+   Also, for those making really big expansion packs, the strategy dll
+   should allow about 26 possible races-- it uses the first character of
+   the team commander's vehicle odf, and tacks on 'vrecy_m' for the
+   recycler ODF. So, if the commander's odf is "kvscout", it'll spawn in
+   a "kvrecy_m" for them to command. [This feature has been in BZ2 since
+   1.0, but not documented until now.]
+     _________________________________________________________________
+   
+  Version 1.2 Multiplayer Instant Action (MPI) Mode
+  
+   BZ2 1.2 adds in a new multiplayer mode, with 1-4 humans on one team
+   versus a computer-controlled team. These maps have 'MPI' by their name
+   in the maps list, by default. When playing these maps, the playerlimit
+   should remain at 4 (maybe 5, if you never want to switch commanders).
+   The AI does get slightly tougher (more free scrap) as more humans
+   play.
+   
+   Like a normal strategy game, the commander of the human teamgroup
+   (always #1, the left group) picks their side's race. The teamgroup 2
+   box is hidden (only CPU), but a button is in its place to select the
+   CPU's race: ISDF or Scion. Thus, you can set up any the 4 combos of
+   ISDF and Scion games.
+   
+   For mapmakers, it should be fairly easy to convert your Instant Action
+   maps to MPI ones. First, place just one spawnpoint (odf 'pspwn_1') on
+   the map, where you want the humans to start. Secondly, change the DLL
+   referenced to 'mpinstant.dll'. Finally, set up the .inf file like any
+   other MP map; copy an existing one for reference if you want.
+   
+   MPI mapmakers have some new things they can use to tweak things.
+   Beyond the normal pathpoints used by an IA map, by using a naming
+   convention, you can place down race-specific items based on the CPU or
+   human race. These pathpoints are of the form 'mpic_fvscav_ivscav'
+   (spawns a Scavenger on the CPU team, appropriate to the CPU race) and
+   'mpih_fvtank_ivtank' (spawns a tank on the human team, appropriate to
+   human race). The 'mpic' and 'mpih' parts are case sensitive, and you
+   can place a number after those to make them unique, such as
+   'mpic1_fvscav_ivscav' and 'mpic2_fvscav_ivscav'. Also, MPI mapmakers
+   can completely override the default AIPs to get a different set of AI
+   behaviors. I quote from the mpidunes.inf file, where this is commented
+   on:
+   
+// Custom AIP name base. The MPInstant.dll will look for several files
+// based on this base, with 3 characters tacked on. Those 3 are as
+// follows: (1) CPU race (f=Scion, i=isdf), (2) Human race, (3) AIP
+// Type (0=Start, 1-3 = begin game types, 'a' == anti-assault, 's' ==
+// siege, 'l' = lategame).
+//
+// If an AIP file is not found, results may be unpredictable. [The AI
+// will probably go to sleep, but haven't tested that.]
+//
+// For example, if svar3 == "foo", at the start of the game, the AIP
+// used will be one of these 4 files:
+// fooii0.aip  -- CPU ISDF, Human ISDF
+// fooif0.aip  -- CPU ISDF, Human Scion
+// foofi0.aip  -- CPU Scion, Human ISDF
+// fooff0.aip  -- CPU Scion, Human Scion
+// svar3 = "MyAIPs"  // Line commented out like this means default AIPs
+
+   The MPI DLL does not allow up to 26 "races" like the strat dll does.
+     _________________________________________________________________
+   
+  Version 1.2 Changing the host
+  
+   As noted in the chatline commands above, v1.2 adds in the ability to
+   change the server in the game. This can happen under the following 
+   conditions: (1) You must be the existing server to change the server, 
+   (2) You can not switch server to self (duh), and (3) All players must 
+   be playing the game (i.e. not in shell).
+   
+   To switch servers, you can do one of the following things: (1) use the
+   chatline command, as above. (2) Hit escape while playing, select a new
+   player, and then click the "Switch Server" button, (3) Hit Alt-X to
+   exit BZ2 completely, and it'll pop up a dialog box saying "Exit game
+   or migrate server first" if it's possible to migrate the server. [And
+   if migration is not judged possible, it'll only have Ok/Cancel
+   buttons.] If you click on the "migrate" button, it'll pick a new
+   server based on the best ping time, and do the migration before
+   exiting.
+     _________________________________________________________________
+   
+   BZ2 official 1.1 patch now available! See
+   http://www.pandemicstudios.com/bzii/ or
+   http://www.planetbattlezone.com for download info. This should fix a
+   number of problems noted.
+   
+   Please note: This document makes reference to Battlezone 1.2, which
+   has not officially been released yet. Thus, the features of that
+   version are subject to change, and this document may not bear any
+   resemblance to the official 1.2 patch. Do NOT email asking me where to
+   find it, though a lot of fansites and message boards may have links to
+   some leaked versions.

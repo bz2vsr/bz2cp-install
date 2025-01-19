@@ -1,0 +1,328 @@
+[Start]
+scrapCount = 40
+scavClass = "fvscav"
+consClass = "fvcons"
+
+[Match]
+targetType1= "ivscout"
+attackType1_1 = "fvscout"
+
+targetType2= "ivscout"
+attackType2_1 = "fvsent"
+
+targetType3 = "ivscout"
+attackType3_1 = "fvtank"
+
+targetType4 = "ivmisl"
+attackType4_1 = "fvscout"
+
+targetType5 = "ivmisl"
+attackType5_1 = "fvsent"
+
+targetType6 = "ivmisl"
+attackType6_1 = "fvtank"
+
+targetType7 = "ivtank"
+attackType7_1 = "fvtank"
+
+targetType8 = "ivtank"
+attackType8_1 = "fvsent"
+attackType8_2 = "fvsent"
+
+targetType9 = "ivtank'
+attackType9_1 = "fvscout"
+attackType9_2 = "fvscout"
+
+targetType10 = "ivatank"
+attackType10_1 = "fvtank"
+attackType10_2 = "fvtank"
+attackType10_3 = "fvtank"
+
+targetType11 = "ivatank"
+attackType11_1 = "fvsent"
+attackType11_2 = "fvsent"
+attackType11_3 = "fvsent"
+
+targetType12 = "ivatank"
+attackType12_1 = "fvscout"
+attackType12_2 = "fvscout"
+attackType12_3 = "fvscout"
+
+targetType13 = "ivwalk"
+attackType13_1 = "fvwalk"
+attackType13_2 = "fvwalk"
+
+targetType14 = "ibgtow"
+attackType14_1 = "fvwalk"
+attackType14_2 = "fvwalk"
+attackType14_3 = "fvwalk"
+
+targetType15 = "ivturr"
+attackType15_1 = "fvtank"
+attackType15_2 = "fvtank"
+
+targetType16 = "ivturr"
+attackType16_1 = "fvscout"
+attackType16_2 = "fvscout"
+attackType16_3 = "fvscout"
+
+targetType17 = "ibgtow"
+attackType17_1 = "fvtank"
+attackType17_2 = "fvtank"
+attackType17_3 = "fvtank"
+
+targetType18 = "ivwalk"
+attackType18_1 = "fvtank"
+attackType18_2 = "fvtank"
+attackType18_3 = "fvtank"
+
+targetType19 = "ivturr"
+attackType19_1 = "fvwalk"
+
+
+[Plan1]
+planType = "CollectPool"
+planPriority = 500
+buildIfNoIdle = 1
+
+[Plan2]
+planType = "CollectField"
+planPriority = 490
+buildIfNoIdle = 1
+maxTries = 3 // otherwise I am just killing myself
+
+[Plan3]
+planType = "CollectPool"
+planPriority = 480
+maxTries = 5
+buildIfNoIdle = 1
+
+[Plan4]
+planType = "CollectPool"
+planPriority = 470
+maxTries = 3
+buildIfNoIdle = 1
+
+
+[Plan5]
+planType = "Hold"
+planPriority = 460
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold1"
+buildIfNoIdle = 1
+
+[Plan6]
+planType = "Hold"
+planPriority = 460
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold2"
+buildIfNoIdle = 1
+
+[Plan7]
+planCondition = "NotExists"
+planConditionClass = "fbforg"
+planConditionCount = 1
+planType = "BuildMinimums"
+planPriority = 440
+buildType1 = "fvscout"
+buildCount1 = 2
+
+[Plan8]
+planCondition = "NotExists"
+planConditionClass = "fbforg"
+planConditionCount = 1
+planType = "Attacker"
+planPriority= 430
+targetType = "ivscav"
+attackType1= "fvscout"
+attackType2= "fvscout"
+maxAttacks = 3
+doNextOnFail = 1
+
+[Plan9]
+planType = "BuildMinimums"
+planPriority = 420
+buildType1 = "fvcons"
+buildCount1 = 1
+
+[Plan10]
+planCondition="NotExists"
+planConditionClass="fbforg"
+planConditionCount=1
+planType = "BaseBuildMinimums"
+planPriority = 410
+buildType1= "fbkiln"
+buildCount1=1
+
+[Plan11]
+planCondition="NotExists"
+planConditionClass="fbforg"
+planConditionCount=1
+planType = "Upgrade"
+planPriority = 400
+unitType = "fbkiln"
+
+[Plan12]
+planType = "BuildMinimums"
+planPriority = 390
+buildType1 = "fvtank"
+buildCount1 = 5
+
+[Plan13]
+planType = "DefendArea"
+planPriority = 380
+targetType = "fbscav"
+doNextOnFail = 1
+
+[Plan14]
+planType = "CollectField"
+planPriority = 370
+defendType1 = "fvsent"
+defendCount1 = 2
+buildIfNoIdle = 1
+
+[Plan15]
+planType = "Attacker"
+planPriority = 360
+maxAttacks = 3
+targetType = "ibscav"
+attackType1 = "fvtank"
+attackType2 = "fvtank"
+
+[Plan16]
+planType = "Hold"
+planPriority = 350
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold3"
+buildIfNoIdle = 1
+
+[Plan17]
+planType = "Hold"
+planPriority = 350
+holdType1 = "fvturr"
+holdCount1 = 1
+holdPoint = "hold4"
+buildIfNoIdle = 1
+
+
+[Plan18]
+planType = "CollectPool"
+planPriority = 340
+defendType1 = "fvsent"
+defendCount1 = 2
+buildIfNoIdle = 1
+
+[Plan19]
+planType = "Attacker"
+planPriority = 330
+maxAttacks = 3
+targetType = "ibscup"
+attackType1 = "fvtank"
+attackType2 = "fvtank"
+attackType3 = "fvtank"
+doNextOnFail = 1
+
+[Plan20]
+planType = "BaseBuildMinimums"
+planPriority= 320
+buildType1 = "fbdowe"
+buildCount1=1
+buildType2= "fbstro"
+buildCount2=1
+
+[Plan21]
+planType= "Recover"
+planPriority = 310
+serviceUnit = "fbdowe"
+unitType1 = "fvtank"
+unitType2 = "fvsent"
+unitType3 = "fvscout"
+// blow off fvwalk
+
+[Plan22]
+planType = "BuildMinimums"
+planPriority = 300
+buildType1 = "fvwalk"
+buildCount1 = 4
+buildType2 = "fvserv"
+buildCount2 = 1
+
+[Plan23]
+planType = "Service"
+planPriority = 290
+serviceUnit = "fvserv"
+unitType1 = "fbrecy"
+unitType2 = "fvwalk"
+unitType3 = "fblung"
+
+[Plan24]
+planType = "Attacker"
+targetType = "ivatank"
+planPriority = 280
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+doNextOnFail = 1
+
+[Plan25]
+planType = "Attacker"
+planPriority = 270
+targetType = "ibscav"
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+attackType3 = "fvtank"
+doNextOnFail = 1
+
+[Plan26]
+planType = "BaseBuildMinimums"
+planPriority= 260
+buildType1 = "fbspir"
+buildLoc1 = "gtow1"
+buildCount1=1
+buildType2 = "fbspir"
+buildLoc2 = "gtow2"
+buildCount2=1
+
+[Plan27]
+planType = "Attacker"
+targetType = "ibgtow"
+planPriority = 250
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+attackType3 = "fvwalk"
+doNextOnFail = 1
+
+[Plan28]
+planType = "Attacker"
+targetType = "ibrecy"
+planPriority = 240
+attackType1 = "fvwalk"
+attackType2 = "fvwalk"
+attackType3 = "fvwalk"
+attackType4 = "fvwalk"
+attackType5 = "fvtank"
+attackType6 = "fvtank"
+doNextOnFail = 1
+
+[Plan29]
+planType = "Attacker"
+targetType = "ibpgen"
+planPriority = 230
+attackType1 = "fvtank"
+attackType2 = "fvtank"
+
+[Plan30]
+planType = "BaseBuildMinimums"
+planPriority= 220
+buildType1 = "fbspir"
+buildLoc1 = "gtow3"
+buildCount1=1
+buildType2 = "fbspir"
+buildLoc2 = "gtow4"
+buildCount2=1
+
+[Plan31]
+planType = "DistributeUnits"
+planPriority = 1 //!
