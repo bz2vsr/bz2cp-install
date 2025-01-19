@@ -18,7 +18,7 @@ NOTE: I suggest making copies of your root folder at certain points, in case you
 
 1. Install Battlezone 2 from CD
 
-2. Make a copy of your Battlezone root folder and name it "Battlezone II Stock" 
+2. Make a backup copy of your Battlezone root folder and name it "Battlezone II Stock" 
 
 3. Install the 1.2 patch using `1.2_Patch\BattlezoneIIupdateUS.exe`
 
@@ -28,7 +28,7 @@ NOTE: I suggest making copies of your root folder at certain points, in case you
 
 	b. Run cg_bz2uncf.exe as Admin
 
-4. Make a copy of your Battlezone folder and name it "Battlezone II 1.2 NO-CD" 
+4. Make a backup copy of your Battlezone folder and name it "Battlezone II 1.2 NO-CD" 
 
 5. Install Forgotten Enemies: 
 
@@ -46,5 +46,5 @@ NOTE: I suggest making copies of your root folder at certain points, in case you
 
 ## Troubleshooting
 
-If you encounter mouse issues in-game such as mouse input freezes, you are likely using a mouse with a DPI setting that is too high. Try lowering it into the 250 range, or use a regular/older USB mouse.
+If you encounter in-game mouse issues such as mouse input freezes, you are likely using a mouse with a DPI setting that is too high. Try lowering it into the 250 range, or use a regular/older USB mouse.
 
