@@ -2,6 +2,8 @@
 
 This guide will walk you through installing Battlezone II: Forgotten Enemies on Windows 11, starting with a stock CD-based install. 
 
+All dependencies are downloaded from [bzscrap.org](https://www.bzscrap.org/downloads/) and included in this repo for convenience.
+
 ## Prerequisites
 
 You will need an original Battlezone II: Combat Commander CD-ROM. 
