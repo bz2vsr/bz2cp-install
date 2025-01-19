@@ -1,6 +1,6 @@
 # Installing Battlezone II: Forgotten Enemies on Windows 11
 
-This guide will walk you through installing Battlezone II: Forgotten Enemies on Windows 11starting with a stock CD-based install. 
+This guide will walk you through installing Battlezone II: Forgotten Enemies on Windows 11, starting with a stock CD-based install. 
 
 ## Prerequisites
 
