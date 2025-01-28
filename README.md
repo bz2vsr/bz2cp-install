@@ -4,6 +4,8 @@ This guide will walk you through installing Battlezone II: Forgotten Enemies on 
 
 All dependencies are downloaded from [bzscrap.org](https://www.bzscrap.org/downloads/) and included in this repo for convenience.
 
+<img width="699" alt="fe-home" src="https://github.com/user-attachments/assets/fbc1f47e-fd03-4f7e-953d-9345a4d6f2d5" />
+
 ## Prerequisites
 
 You will need an original Battlezone II: Combat Commander CD-ROM. 
